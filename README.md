@@ -1,5 +1,6 @@
 <h2>Archivo .env Original</h2>
 
+<pre>
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:Pw3tyqNELGXhD3xdaPG1b8PUSrJ7BEFHUN3paS6eIJE=
@@ -51,3 +52,4 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 JWT_SECRET=vit0rslXAKyMafjR6XEfH0pu484dudL9cMitqjZKNNopXEs2brITjLt0pIfXxKQx
+</pre>
