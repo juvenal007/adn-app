@@ -28,7 +28,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => ['jwt.verify']], function () {
 
-
     // PERRO
     Route::get('/perro/list', [PerroController::class, 'list']);
     Route::post('/perro/store', [PerroController::class, 'add']);

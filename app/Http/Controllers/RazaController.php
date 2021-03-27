@@ -14,9 +14,9 @@ class RazaController extends Controller
     {
         try {
             $listRaza = Raza::all();
-            return response()->json(['response' => ['status' => true, 'data' => $listRaza, 'message' => 'Lista Obtenida']], 200);
+            return Response::custom($listRaza, "Lista Razas");
         } catch (\Illuminate\Database\QueryException $e) {
-            return response()->json(['response' => ['type_error' => 'query_exception', 'status' => false, 'data' => $e, 'message' => 'Error processing']], 500);
+            return Response:: catch($e);
         }
     }
     public function add(Request $request)
@@ -30,7 +30,7 @@ class RazaController extends Controller
             $raza->save();
             return Response::add($raza);
         } catch (\Illuminate\Database\QueryException $e) {
-            return Response:: catch($e);
+            return Response::catch($e);
         }
     }
 
@@ -43,7 +43,7 @@ class RazaController extends Controller
             }
             return Response::details($raza);
         } catch (\Illuminate\Database\QueryException $e) {
-            return Response:: catch($e);
+            return Response::catch($e);
         }
     }
     public function edit($id, Request $request)
@@ -58,7 +58,7 @@ class RazaController extends Controller
             $raza->save();
             return Response::edit($raza);
         } catch (\Illuminate\Database\QueryException $e) {
-            return Response:: catch($e);
+            return Response::catch($e);
         }
     }
     public function delete($id)
@@ -75,7 +75,7 @@ class RazaController extends Controller
             $raza->delete();
             return Response::delete($raza);
         } catch (\Illuminate\Database\QueryException $e) {
-            return Response:: catch($e);
+            return Response::catch($e);
         }
     }
     public function instanciaRaza($raza, Request $request)
